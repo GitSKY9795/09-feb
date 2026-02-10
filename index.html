@@ -1,13 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h5>Ayush</h5>
-    <h1>asdfghjkl</h1>
-    <a href="sdfghjk">yup</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitGuardian AI — Fitness + Health Assistant</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AI Fitness Agent · Revamped</p>
+        <h1>FitGuardian AI</h1>
+        <p class="subtitle">
+          Private-by-design assistant that combines posture insights, fitness coaching,
+          and medical-report explanation with clear non-diagnostic guidance.
+        </p>
+      </div>
+      <button id="toggleTheme" class="secondary">Toggle theme</button>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>1) Body / Pose Analyzer</h2>
+        <p>Upload a workout, posture, or progress image to get actionable fitness feedback.</p>
+        <input type="file" id="fitnessImage" accept="image/*" />
+        <textarea id="fitnessContext" rows="3" placeholder="Add context (goals, pain points, workout level)"></textarea>
+        <button data-action="fitness">Analyze Fitness Image</button>
+      </section>
+
+      <section class="card">
+        <h2>2) Medical Report Analyzer</h2>
+        <p>Upload blood reports, scans, or lab images/PDFs for simplified explanation.</p>
+        <input type="file" id="medicalReport" accept="image/*,.pdf" />
+        <textarea id="medicalContext" rows="3" placeholder="Optional history: age range, existing condition, symptoms"></textarea>
+        <button data-action="medical">Analyze Medical Report</button>
+      </section>
+
+      <section class="card">
+        <h2>3) Prescription & Medicine Explainer</h2>
+        <p>Upload doctor prescriptions or medicine photos for education-focused guidance.</p>
+        <input type="file" id="prescriptionUpload" accept="image/*,.pdf" />
+        <textarea id="prescriptionContext" rows="3" placeholder="Known allergies, current meds, schedule preferences"></textarea>
+        <button data-action="prescription">Explain Prescription</button>
+      </section>
+
+      <section class="card wide">
+        <h2>4) Unified Health + Fitness Plan</h2>
+        <p>Merge all insights into a personalized weekly routine, diet, and lifestyle checklist.</p>
+        <button data-action="plan">Generate Integrated Plan</button>
+      </section>
+
+      <section class="card wide">
+        <h2>AI Coach Console</h2>
+        <div id="output" class="output">
+          <p class="placeholder">Your analysis will appear here. Every response includes medical disclaimers.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        ⚠️ <strong>Medical disclaimer:</strong> This tool provides educational, non-diagnostic guidance only and is not a substitute for licensed medical advice, diagnosis, or treatment.
+      </p>
+    </footer>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
 </html>
